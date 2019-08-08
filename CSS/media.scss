@@ -1,0 +1,29 @@
+$S: 480px;
+$SM:481px;
+$M: 850px;
+$SL:851px;
+$L: 3000px;
+
+@mixin MQ($canvas) {
+    @if $canvas==S {
+        @media only screen and (max-width: $S) {
+            @media only screen and (min-width:0) {
+                @content;
+            }
+        }
+}
+@if $canvas==M {
+    @media only screen and (max-width: $M) {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    }
+}
+@if $canvas==L {
+    @media only screen and (max-width: $L) {
+        @media only screen and (min-width: $SL) {
+            @content;
+        }
+    }
+}
+}
